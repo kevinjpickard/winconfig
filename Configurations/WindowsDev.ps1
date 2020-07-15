@@ -29,7 +29,6 @@ Configuration WindowsDevConfiguration
       Ensure    = 'Present'
       Name      = @(
         "7zip",
-        "VisualStudio2019Professional",
         "awscli",
         "cmake",
         "git",
@@ -38,6 +37,13 @@ Configuration WindowsDevConfiguration
         "python",
         "sysinternals"
       )
+      DependsOn = "[cChocoInstaller]installChoco"
+    }
+
+    cChocoPackageInstaller install_Visual_Studio {
+      Name = "VisualStudio2019Professional"
+      Ensure = 'Present'
+      Params = '--includeRecommended --passive --locale en-US'
       DependsOn = "[cChocoInstaller]installChoco"
     }
 

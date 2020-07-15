@@ -1,3 +1,10 @@
+# Elevate If Needed
+$SecurityPrinciple = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
+If (-NOT ($SecurityPrinciple.IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))) {
+  Start-Process powershell -Verb runAs
+  Break
+}
+
 # Enable and configure WinRM
 Set-WSManQuickConfig -Force | Out-Null
 winrm set winrm/config '@{MaxEnvelopeSizekb="2563000"}' | Out-Null # VS Pro Installer is 2.3 GB
@@ -9,4 +16,4 @@ Install-Module cchoco -Force
 . .\Configurations\WindowsDev.ps1 | Out-Null
 
 # Apply Configuration
-Start-DscConfiguration -Path .\WindowsDevConfiguration\ -Wait -Force # -Verbose
+Start-DscConfiguration -Path .\WindowsDevConfiguration\ -Wait -Force -Verbose
