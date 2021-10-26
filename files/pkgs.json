@@ -1,0 +1,140 @@
+{
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2021-10-21T20:33:26.731-00:00",
+	"Sources" : 
+	[
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier": "VB-Audio.Voicemeeter.Potato"
+				},
+				{
+					"PackageIdentifier": "OBSProject.OBSStudio"
+				},
+				{
+					"PackageIdentifier": "Valve.Steam"
+				},
+				{
+					"PackageIdentifier": "ElectronicArts.EADesktop"
+				},
+				{
+					"PackageIdentifier": "GOG.Galaxy"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier": "Nvidia.Broadcast"
+				},
+				{
+					"PackageIdentifier": "Nvidia.GeForceExperience"
+				},
+				{
+					"PackageIdentifier": "Lowkey.LowkeyGG"
+				},
+				{
+					"PackageIdentifier": "Blitz.Blitz"
+				},
+				{
+					"PackageIdentifier": "Spotify.Spotify"
+				},
+				{
+					"PackageIdentifier": "Twilio.Authy"
+				},
+				{
+					"PackageIdentifier": "AgileBits.1Password"
+				},
+				{
+					"PackageIdentifier": "Discord.Discord"
+				},
+				{
+					"PackageIdentifier": "Google.Chrome"
+				},
+				{
+					"PackageIdentifier": "Mozilla.Firefox"
+				},
+				{
+					"PackageIdentifier": "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier": "Docker.DockerDesktop"
+				},
+				{
+					"PackageIdentifier": "Logitech.LGS"
+				},
+				{
+					"PackageIdentifier": "Corsair.iCUE.4"
+				},
+				{
+					"PackageIdentifier": "NZXT.CAM"
+				},
+				{
+					"PackageIdentifier": "Elgato.StreamDeck"
+				},
+				{
+					"PackageIdentifier": "Elgato.ControlCenter"
+				},
+				{
+					"PackageIdentifier": "VMware.WorkstationPro"
+				},
+				{
+					"PackageIdentifier": "Oracle.VirtualBox"
+				},
+				{
+					"PackageIdentifier": "PrivateInternetAccess.PrivateInternetAccess"
+				},
+				{
+					"PackageIdentifier": "AMD.RyzenMaster"
+				},
+				{
+					"PackageIdentifier": "REALiX.HWiNFO"
+				},
+				{
+					"PackageIdentifier": "7zip.7zip"
+				},
+				{
+					"PackageIdentifier": "GoLang.Go"
+				},
+				{
+					"PackageIdentifier": "Git.Git"
+				},
+				{
+					"PackageIdentifier": "Keybase.Keybase"
+				},
+				{
+					"PackageIdentifier": "SublimeHQ.SublimeText.4"
+				},
+				{
+					"PackageIdentifier": "PlayStation.PSRemotePlay"
+				},
+				{
+					"PackageIdentifier": "Ubisoft.Connect"
+				},
+				{
+					"PackageIdentifier": "VideoLAN.VLC"
+				},
+				{
+					"PackageIdentifier": "Voicemod.Voicemod"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://winget.azureedge.net/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion" : "1.1.12663"
+}
