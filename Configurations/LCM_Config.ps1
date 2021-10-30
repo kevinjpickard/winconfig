@@ -5,6 +5,7 @@ configuration LCMConfig
   {
     Settings {
       RebootNodeIfNeeded = $true
+      ConfigurationMode = ApplyOnly
     }
   }
 }

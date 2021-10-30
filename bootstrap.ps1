@@ -16,10 +16,10 @@
 
 [CmdletBinding()]
 Param (
-    [Parameter(Mandatory=$false, ValueFromPipeline=$true)]
-    [ValidateSet("gaming", "dev")]
-    [String[]]
-    $Profiles=@('gaming', 'dev')
+  [Parameter(Mandatory = $false, ValueFromPipeline = $true)]
+  [ValidateSet("gaming", "dev")]
+  [String[]]
+  $Profiles = @('gaming', 'dev')
 )
 
 # Elevate If Needed
@@ -40,9 +40,9 @@ New-Item -ItemType SymbolicLink -Path $profile.CurrentUserAllHosts -Value $(Reso
 
 # Install Chocolatey DSC Resource
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-Install-PackageProvider -Name Chocolatier -Force
+# Install-PackageProvider -Name Chocolatier -Force
 Install-PackageProvider -Name ChocolateyGet -Force
-Install-Module -Name cchoco -Force
+# Install-Module -Name cchoco -Force
 Install-Module -Name ComputerManagementDsc -Force
 
 # Configure LCM

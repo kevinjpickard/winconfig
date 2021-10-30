@@ -7,7 +7,6 @@ Configuration dev
 
   Import-DscResource -ModuleName PSDesiredStateConfiguration
   Import-DscResource -Name PackageManagement,PackageManagementSource
-  Import-DscResource -ModuleName cChoco
   Import-DscResource -ModuleName ComputerManagementDsc
 
   Node $ComputerName
@@ -16,8 +15,12 @@ Configuration dev
       DebugMode = 'ForceModuleImport'
     }
 
-    PackageManagement Chocolatier {
-      Name = 'Chocolatier'
+    # PackageManagement Chocolatier {
+    #   Name = 'Chocolatier'
+    #   Source = 'PSGallery'
+    # }
+    PackageManagement ChocolateyGet {
+      Name = 'ChocolateyGet'
       Source = 'PSGallery'
     }
 
@@ -43,31 +46,33 @@ Configuration dev
         "vscode",
         "vmwareworkstation",
         "keybase",
-        "pia"
+        "pia",
+        "spotify",
+        "1password"
     )
 
     foreach ($package in $chocoPackages) {
       PackageManagement "Install_$package" {
         Name = $package
         RequiredVersion = 'latest'
-        ProviderName = 'chocolatier'
-        DependsOn = '[PackageManagement]Chocolatier'
+        ProviderName = 'ChocolateyGet'
+        DependsOn = '[PackageManagement]ChocolateyGet'
       }
     }
 
-    $winGetPackages = @(
-      "Spotify",
-      "1password"
-    )
+    # $winGetPackages = @(
+    #   "Spotify",
+    #   "1password"
+    # )
 
-    foreach ($package in $winGetPackages) {
-      PackageManagement "Install_$package" {
-        Name = $package
-        #RequiredVersion = 'latest'
-        ProviderName = 'winget'
-        DependsOn = '[PackageManagement]WinGet'
-      }
-    }
+    # foreach ($package in $winGetPackages) {
+    #   PackageManagement "Install_$package" {
+    #     Name = $package
+    #     #RequiredVersion = 'latest'
+    #     ProviderName = 'winget'
+    #     DependsOn = '[PackageManagement]WinGet'
+    #   }
+    # }
 
     UserAccountControl 'ChangeNotificationLevel' {
       IsSingleInstance  = 'Yes'
