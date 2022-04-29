@@ -28,3 +28,10 @@ function subl {
 }
 
 $env:VIRTUAL_ENV_DISABLE_PROMPT=1
+
+Import-Module -Name PSReadLine -MinimumVersion 2.2.0
+Import-Module -Name PSColor
+
+Set-PSReadlineOption -PredictionSource HistoryAndPlugin -BellStyle Visual
+
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\bubblesline.omp.json" | Invoke-Expression
